@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/Font/Coco-Gothic-Bold-trial.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/Font/Coco-Gothic-Regular-trial.ttf" type="DynamicFontData" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://assets/images/dad.png" type="Texture" id=4]
 [ext_resource path="res://assets/images/hannah.png" type="Texture" id=5]
 [ext_resource path="res://Dialog.gd" type="Script" id=6]
+[ext_resource path="res://assets/images/buttonNext2.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/buttonNext.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 17
@@ -14,6 +16,22 @@ font_data = ExtResource( 1 )
 [sub_resource type="DynamicFont" id=2]
 size = 18
 font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "typewriter_effect"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
 
 [node name="CutScene" type="Control"]
 __meta__ = {
@@ -64,8 +82,27 @@ margin_right = -0.0343018
 margin_bottom = 0.00798798
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+visible_characters = 106
+percent_visible = 0.866667
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DialogBkg/Dialog"]
+autoplay = "typewriter_effect"
+anims/typewriter_effect = SubResource( 3 )
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 786.297
+margin_top = 469.329
+margin_right = 826.297
+margin_bottom = 509.329
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="TextureButton" to="DialogBkg" method="_on_TextureButton_pressed"]

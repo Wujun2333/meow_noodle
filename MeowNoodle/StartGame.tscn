@@ -1,13 +1,15 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/ARCADECLASSIC.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://StartGame.gd" type="Script" id=2]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://assets/Font/ARCADECLASSIC2.TTF"
+
+[sub_resource type="DynamicFont" id=2]
 size = 39
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 1 )
+font_data = SubResource( 1 )
 
 [node name="StartGame" type="Control"]
 anchor_right = 1.0
@@ -21,7 +23,9 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 7.14987
+margin_top = -0.902496
 margin_right = 7.1499
+margin_bottom = -0.902466
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -41,7 +45,7 @@ margin_left = -55.0
 margin_top = -22.0
 margin_right = 50.0
 margin_bottom = 18.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Start"
 __meta__ = {
 "_edit_use_anchors_": false

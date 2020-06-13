@@ -36,9 +36,9 @@ func check_player_position():
 	if $Player.position.distance_to($DadCat.position) < 30:
 		$StoryScene/CutScene.visible = true
 #		$StoryScene.add_child(Storyscene)
-	else:
-		$StoryScene/CutScene.visible = false
-		pass
+#	else:
+#		$StoryScene/CutScene.visible = false
+#		pass
 
 
 	
