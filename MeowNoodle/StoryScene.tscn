@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/Font/Coco-Gothic-Bold-trial.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/Font/Coco-Gothic-Regular-trial.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/images/dialogBox.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/dad.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/hannah.png" type="Texture" id=5]
+[ext_resource path="res://Dialog.gd" type="Script" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 17
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 18
+font_data = ExtResource( 2 )
+
+[node name="CutScene" type="Control"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hannah" type="Sprite" parent="."]
+position = Vector2( 217.309, 292.202 )
+texture = ExtResource( 5 )
+
+[node name="Dad" type="Sprite" parent="."]
+position = Vector2( 655.612, 278.696 )
+texture = ExtResource( 4 )
+
+[node name="DialogBkg" type="TextureRect" parent="."]
+margin_left = 50.8444
+margin_top = 380.916
+margin_right = 859.844
+margin_bottom = 536.916
+texture = ExtResource( 3 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterName" type="Label" parent="DialogBkg"]
+margin_left = 35.3698
+margin_top = 32.042
+margin_right = 123.37
+margin_bottom = 49.042
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Character:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dialog" type="RichTextLabel" parent="DialogBkg"]
+anchor_left = 0.044
+anchor_top = 0.364
+anchor_right = 0.956
+anchor_bottom = 0.782
+margin_left = -0.226254
+margin_top = 0.215996
+margin_right = -0.0343018
+margin_bottom = 0.00798798
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
