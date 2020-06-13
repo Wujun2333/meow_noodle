@@ -14,7 +14,8 @@ size = 17
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 18
+size = 19
+extra_spacing_top = 2
 font_data = ExtResource( 2 )
 
 [sub_resource type="Animation" id=3]
@@ -48,9 +49,9 @@ texture = ExtResource( 4 )
 
 [node name="DialogBkg" type="TextureRect" parent="."]
 margin_left = 50.8444
-margin_top = 380.916
+margin_top = 384.916
 margin_right = 859.844
-margin_bottom = 536.916
+margin_bottom = 540.916
 texture = ExtResource( 3 )
 script = ExtResource( 6 )
 __meta__ = {
@@ -82,8 +83,6 @@ margin_right = -0.0343018
 margin_bottom = 0.00798798
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-visible_characters = 106
-percent_visible = 0.866667
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 scroll_active = false
 __meta__ = {
@@ -96,9 +95,9 @@ anims/typewriter_effect = SubResource( 3 )
 
 [node name="TextureButton" type="TextureButton" parent="."]
 margin_left = 786.297
-margin_top = 469.329
-margin_right = 826.297
-margin_bottom = 509.329
+margin_top = 473.329
+margin_right = 828.297
+margin_bottom = 513.329
 texture_normal = ExtResource( 8 )
 texture_pressed = ExtResource( 7 )
 texture_hover = ExtResource( 7 )
